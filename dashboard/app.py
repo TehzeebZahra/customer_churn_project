@@ -56,42 +56,73 @@ CHURN_COLORS = {"Stayed": COLORS["success"], "Churned": COLORS["danger"]}
 RISK_COLORS = {"LOW": VIRIDIS["v1"], "MEDIUM": VIRIDIS["v4"], "HIGH": VIRIDIS["v8"]}
 VIRIDIS_SCHEME = "viridis"  # Altair's built-in scheme name, used for continuous/quantitative bars
 
+# -----------------------------------------------------------------
+# NOTE ON DARK MODE:
+# This CSS forces a light appearance regardless of the user's
+# system/browser theme. Pair this with a `.streamlit/config.toml`
+# file (base = "light") in your project root for full reliability —
+# the config.toml controls Streamlit's own theme engine, while the
+# rules below act as a safety net for containers the config doesn't
+# always reach (e.g. stAppViewContainer, stHeader on some versions).
+# -----------------------------------------------------------------
+
 st.markdown(f"""
 <style>
-    .stApp {{
-        background-color: {COLORS['bg']};
+    /* Force light background on every top-level container,
+       not just .stApp, so dark mode can't leak through */
+    .stApp,
+    [data-testid="stAppViewContainer"],
+    [data-testid="stHeader"],
+    [data-testid="stToolbar"],
+    [data-testid="stBottomBlockContainer"],
+    [data-testid="stMain"] {{
+        background-color: {COLORS['bg']} !important;
     }}
+
     [data-testid="stSidebar"] {{
-        background-color: {COLORS['sidebar']};
+        background-color: {COLORS['sidebar']} !important;
     }}
     [data-testid="stSidebar"] * {{
         color: {COLORS['sidebar_text']} !important;
     }}
+
     [data-testid="stMetric"] {{
-        background-color: {COLORS['card']};
+        background-color: {COLORS['card']} !important;
         border: 1px solid #E9ECEF;
         border-radius: 12px;
         padding: 16px 18px;
         box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }}
     [data-testid="stMetricValue"] {{
-        color: {COLORS['primary_dark']};
+        color: {COLORS['primary_dark']} !important;
     }}
     [data-testid="stMetricLabel"] {{
+        color: {COLORS['neutral']} !important;
+    }}
+
+    /* Headings: force color AND make sure they aren't inheriting
+       a transparent/near-white color from a dark theme */
+    h1, h2, h3, h4, h5, h6,
+    .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {{
+        color: {COLORS['sidebar']} !important;
+        opacity: 1 !important;
+    }}
+
+    /* Body text / regular paragraphs, in case dark mode
+       makes default text invisible on the light background */
+    p, span, label, div[data-testid="stMarkdownContainer"] {{
         color: {COLORS['neutral']};
     }}
-    h1, h2, h3 {{
-        color: {COLORS['sidebar']};
-    }}
+
     .stButton>button {{
         background-color: {COLORS['primary']};
-        color: white;
+        color: white !important;
         border-radius: 8px;
         border: none;
     }}
     .stButton>button:hover {{
         background-color: {COLORS['primary_dark']};
-        color: white;
+        color: white !important;
     }}
 </style>
 """, unsafe_allow_html=True)

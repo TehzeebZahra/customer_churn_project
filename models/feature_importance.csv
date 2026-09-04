@@ -1,0 +1,51 @@
+Feature,Importance
+cat__Contract_Two year,0.8332135202350511
+cat__InternetService_DSL,0.7186714628796352
+cat__InternetService_Fiber optic,0.6865328694482842
+cat__Contract_Month-to-month,0.6138963809916563
+num__MonthlyCharges,0.5073328372265843
+num__tenure,0.39989806664566524
+num__Customer_Lifetime_Months,0.39989806664566524
+cat__PaperlessBilling_No,0.3446037494753162
+cat__MultipleLines_No,0.31425860279044904
+cat__DeviceProtection_No internet service,0.2770572668081419
+cat__InternetService_No,0.2770572668081419
+cat__OnlineSecurity_No internet service,0.2770572668081419
+cat__TechSupport_No internet service,0.2770572668081419
+cat__StreamingTV_No internet service,0.2770572668081419
+cat__StreamingMovies_No internet service,0.2770572668081419
+cat__OnlineBackup_No internet service,0.2770572668081419
+num__TotalCharges,0.2618190626112656
+cat__Dependents_Yes,0.2575209924794382
+num__Short_Tenure,0.24730700499161848
+num__Service_Count,0.24137133358434204
+cat__OnlineSecurity_Yes,0.22954368909326028
+cat__PaymentMethod_Credit card (automatic),0.20345065635864104
+cat__TechSupport_Yes,0.19969764134198453
+cat__OnlineSecurity_No,0.19740509566188993
+cat__PaymentMethod_Electronic check,0.19338178201797365
+cat__PhoneService_Yes,0.18865871659355712
+cat__StreamingMovies_No,0.18192494053840502
+cat__StreamingTV_No,0.1806612677816229
+cat__PaymentMethod_Bank transfer (automatic),0.17924841664335053
+cat__Partner_No,0.16867242661758056
+cat__TechSupport_No,0.16755904791063572
+cat__gender_Female,0.16219467699705242
+num__Average_Monthly_Spend,0.1599221333227222
+cat__StreamingMovies_Yes,0.14978634710703997
+cat__StreamingTV_Yes,0.1485226743502693
+cat__gender_Male,0.14700118324244932
+cat__Partner_Yes,0.14052343362191835
+cat__MultipleLines_Yes,0.12559988619688847
+cat__MultipleLines_No phone service,0.1205371436459408
+cat__PhoneService_No,0.1205371436459408
+cat__PaymentMethod_Mailed check,0.11987856925546996
+cat__OnlineBackup_Yes,0.11124872941673832
+cat__Contract_One year,0.08987872099611081
+cat__OnlineBackup_No,0.07911013598537563
+num__SeniorCitizen,0.05662331112886245
+cat__Dependents_No,0.05167486776005494
+num__High_Monthly_Charge,0.04160171452815166
+cat__DeviceProtection_Yes,0.037570314738352914
+cat__PaperlessBilling_Yes,0.0354078892358114
+cat__DeviceProtection_No,0.00543172130699111

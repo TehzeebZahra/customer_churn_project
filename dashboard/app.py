@@ -18,8 +18,9 @@ st.set_page_config(
 # =========================================================
 # 2. PROJECT PATH
 # =========================================================
+from pathlib import Path
 
-PROJECT_PATH = r"C:\Users\AA\Desktop\Internship\customer_churn_project"
+PROJECT_PATH = Path(__file__).resolve().parent.parent
 
 DATA_PATH = os.path.join(
     PROJECT_PATH,
